@@ -5,9 +5,9 @@ const port = process.env.PORT || 3000;
 var app = express();
 
 hbs.registerPartials(__dirname+'/views/partials');
-/*hbs.registerHelper('currentYear', ()=>{
+hbs.registerHelper('currentYear', ()=>{
     return new Date().getFullYear();
-});*/
+});
 
 hbs.registerHelper('streamIt', (text) => {
     return text.toUpperCase();
@@ -28,9 +28,9 @@ app.use((req, res , next)=>{
     next();
 });
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     res.render('maintenance.hbs');
-});
+});*/
 
 app.get('/', (req, res)=>{
     res.render('home.hbs',{
